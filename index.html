@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neon Nexus</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">NEON NEXUS</h1>
+        
+        <div id="menu-ui">
+            <button class="btn ai-btn" onclick="startAIGame()">Play Ruthless AI</button>
+            <div class="divider">OR MULTIPLAYER SERVER</div>
+            <button class="btn host-btn" onclick="hostGame()">Host Nexus</button>
+            <div id="host-info" class="hidden">
+                <p>Uplink Code:</p>
+                <code id="peer-id-display">Establishing...</code>
+                <p class="small">Transmit this to Player 2.</p>
+            </div>
+            <div class="join-section">
+                <input type="text" id="join-id" placeholder="Enter Uplink Code">
+                <button class="btn join-btn" onclick="joinGame()">Connect</button>
+            </div>
+        </div>
+
+        <div id="game-ui" class="hidden">
+            <div class="score-board">
+                <div class="player p1-score">P1 (CYAN): <span id="score-1">0</span></div>
+                <div id="turn-indicator">System: Waiting...</div>
+                <div class="player p2-score">P2 (GOLD): <span id="score-2">0</span></div>
+            </div>
+            <div id="board-container">
+                <div id="board"></div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2 id="result-title">SYSTEM HALTED</h2>
+            <p id="result-details">Cyan: 0 | Gold: 0</p>
+            <button class="btn" onclick="resetToMenu()">Initialize New Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+              </html>
